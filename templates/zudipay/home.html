@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'zudipay/home.css' %}" type="text/css">
+{% endblock %}
+{% block body %}
+<div class="header">
+    <img src="{% static 'logo-medium.png' %}" alt="zudilogo"  id="header-logo">
+</div>
+<div class="container zudi-menu">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="/Exchange" class="zudi-button">
+                        <img src="{% static 'coin.png' %}" class="icon" alt="سعر صرف التومان"/>
+                        <div class="vertical-line"></div>
+                        <span class="button-text">سعر صرف التومان</span>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/Calculate" class="zudi-button">
+                        <img src="{% static 'accounting.png' %}" class="icon" alt="حاسبة"/>
+                        <div class="vertical-line"></div>
+                        <span class="button-text">حاسبة</span>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/Calculate" class="zudi-button">
+                        <img src="{% static 'tourit.png' %}" class="icon" alt="حوالة الكترونية"/>
+                        <div class="vertical-line"></div>
+                        <span class="button-text">حوالة الكترونية</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="row" style="text-align:center;width:100%;">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4">
+                    <a href=""<p><i class="fab fa-facebook-square"></i> zudipay</p></a>
+                </div>
+                <div class="col-md-4">
+                    <a href=""<p><i class="fab fa-whatsapp"></i> +98-9127118257</p></a>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+            </div>
+            <p style="text-align:center;color:#fff;">۲۰۱۹ جميع الحقوق محفوظة لشركة زودي.</p>
+        </footer>
+{% endblock %}

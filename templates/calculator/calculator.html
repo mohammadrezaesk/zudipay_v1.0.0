@@ -1,0 +1,66 @@
+{% extends "base2.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'zudipay/calculator.css' %}" type="text/css">
+<script type="text/javascript">
+function convert(x){
+    var from = document.getElementById('from').value;
+    var input = document.getElementById('input').value;
+    var result = document.getElementById('result');
+    if(from=="dollar"){
+        result.innerHTML = x[0] * input +" تومان";
+        return true;
+    }
+    if(from=="dinar"){
+        result.innerHTML = x[1] * input +" تومان";
+        return true;
+    }
+    else{
+      result.innerHTML = (input/ x[2]).toFixed(0) + " دولار"+"<br>";
+      result.innerHTML += (input/ x[3]).toFixed(0) + " دينار";
+
+      return true;
+    }
+}
+
+</script>
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h2 id="topheader">تبديل</h2>
+    <form class="form-group" method="get" onsubmit="return false">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+              <input type="number" name="" class="form-control" placeholder="مقدار الاولية" id="input" value="0" min="0" onchange="convert({{convertrate}})">
+            </div>
+            <div class="col-md-4">
+              <select class="form-control" placeholder="مبدا" class="col-md-3" required id="from" onchange="convert({{convertrate}})">
+                  <option value="" disabled selected>مبدا</option>
+                  <option value="dinar">دينار</option>
+                  <option value="dollar">دولار</option>
+                  <option value="toman">تومان</option>
+              </select>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <h2 id="tasir">تصير</h2>
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <p  id="result"></p>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+        <!--<div class="row">
+          <div class="col-md-6">
+            <p class="form-control"></p>
+          </div>
+          <div class="col-md-6">
+            <p class="form-control"></p>
+          </div>
+        </div>-->
+
+    </form>
+</div>
+{% endblock %}

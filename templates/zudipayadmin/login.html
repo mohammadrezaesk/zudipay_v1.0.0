@@ -1,0 +1,12 @@
+{% extends 'base2.html' %}
+{% block body %}
+<div class="container">
+    <form class="form-group" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="username" class="form-control">
+        <input type="password" name="password" placeholder="password" class="form-control">
+        <button type="submit" name="button" class="btn btn-primary">login</button>
+        
+    </form>
+</div>
+{% endblock %}

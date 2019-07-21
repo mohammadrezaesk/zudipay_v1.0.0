@@ -1,0 +1,77 @@
+{% extends "base2.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'zudipay/exchange.css' %}" type="text/css">
+{% endblock %}
+{% block body %}
+    <div class="container">
+
+        <div class="row">
+          <div class="col-md-6">
+            <div style="text-align:center;margin-bottom:10px;margin-top: 10px;"><i class="flag-icon flag-icon-us"></i><span> مئة دولار</span></div>
+
+              {% for card in cards %}
+                  {% if card.type == "100dollar" and card.ishow == True %}
+                      <div class="row showcard">
+
+                              <div class="col-6" style="float:right;text-align:right;">
+                                  {% if card.country == "iran" %}
+                                      <i class="flag-icon flag-icon-ir"></i>
+                                  {% elif card.country == "iraq" %}
+                                      <i class="flag-icon flag-icon-iq"></i>
+                                  {% endif %}
+                                  {{card.city}}
+                              </div>
+                              <div class="col-6" style="float:left;">
+                                  <span class="price">{{card.price}}</span> تومان
+                              </div>
+                      </div>
+                {% endif %}
+              {% endfor %}
+          </div>
+          <div class="col-md-6">
+            <div style="text-align:center;margin-bottom:10px;margin-top: 10px;"><i class="flag-icon flag-icon-iq"></i><span> الف دينار</span></div>
+            {% for card in cards %}
+                {% if card.type == "1000dinar" and card.ishow == True %}
+                    <div class="row showcard">
+                            <div class="col-6" style="float:right;text-align:right;">
+                              {% if card.country == "iran" %}
+                                  <i class="flag-icon flag-icon-ir"></i>
+                              {% elif card.country == "iraq" %}
+                                  <i class="flag-icon flag-icon-iq"></i>
+                              {% endif %}
+                              {{card.city}}
+
+                            </div>
+                            <div class="col-6" style="float:left;">
+                                {{card.price}} تومان
+                            </div>
+                    </div>
+                  {% elif card.type == "havale" and card.ishow == True %}
+                        <div class="row showcard" style="border: solid 5px #4bff4b;">
+                                <div class="col-8" style="float:right;text-align:right;">
+                                  {% if card.country == "iran" %}
+                                      <i class="flag-icon flag-icon-ir"></i>
+                                  {% elif card.country == "iraq" %}
+                                      <i class="flag-icon flag-icon-iq"></i>
+                                  {% endif %}
+                                  {{card.city}}
+
+                                </div>
+                                <div class="col-4" style="float:left;">
+                                    {{card.price}} تومان
+                                </div>
+                        </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var x = document.getElementsByClassName("price");
+        for (i = 0; i < x.length; i++) {
+            x[i].innerHTML = parseInt(x[i].innerHTML);
+        }
+    </script>
+
+{% endblock %}
