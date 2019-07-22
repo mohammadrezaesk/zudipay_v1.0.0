@@ -1,0 +1,87 @@
+@font-face {
+  font-family: iransans;
+  src: url(fonts/IRANSansWeb.ttf);
+}
+*{
+  font-family: iransans;
+}
+.header{
+  background-image: url('sky.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+#header-logo{
+  width: 30%;
+margin:10% ;
+}
+.zudi-menu {
+
+}
+.zudi-button {
+    display: block;
+    text-align: right;
+    padding: 15px;
+    box-shadow: 0 0 10px #bbb;
+    border-radius: 10px;
+	border: solid 1px white;
+    color: #666;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.zudi-button:hover {
+    color: #666;
+    text-decoration: none;
+	border: solid 1px #9abcde;
+}
+
+.vertical-line {
+    width: 1px;
+    top: 20px;
+    bottom: 20px;
+    position: absolute;
+    background-color: #ddd;
+    display: inline-block;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.button-text {
+    position: inherit;
+    margin-right: 30px;
+}
+
+.icon {
+    width: 25px;
+    height: auto;
+}
+footer{
+  position: absolute;
+   width: 100%;
+   background-color: #003b6a;
+   margin-top: 40px;
+   padding-top:45px;
+   padding-bottom: 40px;
+
+
+}
+footer a{
+  color: #fff;
+}
+footer .row{
+  margin:0;
+}
+footer .row .col-md-4{
+  padding-left: 0;
+  padding-right: 0;
+}
+@media only screen and (max-width: 450px) {
+  #header-logo {
+    width: 60%;
+
+  }
+  .zudi-menu{
+    margin-top: 50 px;
+  }
+}
