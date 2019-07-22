@@ -25,4 +25,4 @@ urlpatterns = [
     url(r'^Calculate/',include('calculate.urls')),
     url(r'^zudipayadminstraitor/', include(('zudipayadmin.urls', 'zudipayadmin'), namespace='zudipayadmin')),
     url(r'^$',home_views.home)
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,0 +1,69 @@
+@font-face {
+  font-family: iransans;
+  src: url(fonts/IRANSansWeb.ttf);
+}
+*{
+  font-family: iransans;
+}
+.header{
+  background-image: url('sky.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 2px 2px #fff;
+
+  text-align: center;
+  position: relative;
+}
+#header-logo{
+  margin:5% 10% 10% 10% ;
+  width: 180px;
+}
+#time{
+  position:absolute;
+  top:0;
+  right:0;
+  background:#4776fe;
+  padding:5px;
+  border-bottom-left-radius:15px;
+}
+footer{
+  position: absolute;
+   width: 100%;
+   background-color: #003b6a;
+   margin-top: 40px;
+   padding-bottom: 40px;
+   padding-top:45px;
+
+}
+footer a{
+  color: #fff;
+}
+footer .row{
+  margin:0;
+}
+footer .row .col-md-4{
+  padding-left: 0;
+  padding-right: 0;
+}
+#date{
+  position:absolute;
+  top:0%;
+  right:0%;
+  color:#fff;
+  background:orange;
+  padding:5px;
+  border-bo.:15px;
+}
+@media only screen and (max-width: 450px) {
+  #header-logo {
+    margin:17% 10% 15% 10% ;
+
+  }
+  #time{
+    font-size: 0.5rem;
+
+
+  }
+
+
+}
