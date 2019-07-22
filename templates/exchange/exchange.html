@@ -49,7 +49,7 @@
                     </div>
                   {% elif card.type == "havale" and card.ishow == True %}
                         <div class="row showcard" style="border: solid 5px #4bff4b;">
-                                <div class="col-8" style="float:right;text-align:right;">
+                                <div class="col-7" style="float:right;text-align:right;">
                                   {% if card.country == "iran" %}
                                       <i class="flag-icon flag-icon-ir"></i>
                                   {% elif card.country == "iraq" %}
@@ -58,7 +58,7 @@
                                   {{card.city}}
 
                                 </div>
-                                <div class="col-4" style="float:left;">
+                                <div class="col-5" style="float:left;">
                                     {{card.price}} تومان
                                 </div>
                         </div>
