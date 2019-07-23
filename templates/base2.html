@@ -19,8 +19,10 @@
   </head>
   <body>
     <div class="header">
-        <!--<p id="time"></p>-->
         <a href="/"><img src="{% static 'logo.png' %}" alt="zudilogo"  id="header-logo"></a>
+    </div>
+    <div id="time" class="col-6">
+
     </div>
     {% block body %}
     {% endblock %}
@@ -30,10 +32,10 @@
 
             </div>
             <div class="col-md-4">
-                <a href=""<p><i class="fab fa-facebook-square"></i> zudipay</p></a>
+                <a href="https://facebook.com/zuditasrif" dir="ltr"><p><i class="fab fa-facebook-square"></i> Zudipay</p></a>
             </div>
             <div class="col-md-4">
-                <a href=""<p><i class="fab fa-whatsapp"></i> +98-905 3307 880</p></a>
+                <a href="" dir="ltr"><p><i class="fab fa-whatsapp"></i> 0098 905 3307 880</p></a>
             </div>
             <div class="col-md-2">
 
@@ -43,31 +45,49 @@
     </footer>
   </body>
   <script>
-  var monthes = ["محرم","صفر","ربيع الاول","ربيع الثاني","جمادي الاول","جمادي الثاني","رجب","شعبان","رمضان","شوال","ذي القعده","ذي الحجة"]
+  var monthes = ["كانون الثاني","شباط","اذار","نيسان","ايار","حزيران","تموز","اب","ايلول","تشرين الاول","تشرين الثاني","كانون الاول"]
   var d = new Date();
-  function writeHijri(date, lang) {
-  var date = date || new Date();
-  lang = lang || 'en';
-  var options = {
-    year: 'numeric', month: 'long', day: 'numeric'
-  };
-  return date.toLocaleString(lang + '-u-ca-islamic', options);
-}
-
-// 1 Jan 2017 converted to Hijri (3 Rab. II 1438) in Arabic
-   var seconds = d.getSeconds();
-
+  var year = d.getFullYear();
+  var month = d.getMonth();
+  var dd = d.getDate();
+  var seconds = d.getSeconds();
   var minutes = d.getMinutes();
   var hour = d.getHours();
-  //document.getElementById('time').innerHTML=hour +":"+minutes+":"+seconds+"طهران";
+  if (hour%12<10){
+    hour = "0"+hour%12
+  }
+  if (minutes<10){
+    minutes = "0"+minutes
+  }
+  if(d.getHours()<12){
+      document.getElementById('time').innerHTML=hour +":"+minutes+" ص بتوقيت طهران - "+ dd +" "+ monthes[12-month]+" " + year;
+  }
+  else{
+      document.getElementById('time').innerHTML=hour +":"+minutes+" م بتوقيت طهران - "+ dd+" "+ monthes[12-month]+" " + year;
+
+  }
   setInterval(changetime, 1000);
   function changetime(){
     var d = new Date();
+    var year = d.getFullYear();
+    var month = d.getMonth();
+    var dd = d.getDate();
     var seconds = d.getSeconds();
     var minutes = d.getMinutes();
     var hour = d.getHours();
-    //document.getElementById('time').innerHTML=hour +":"+minutes+":"+seconds+"طهران";
+    if (hour%12<10){
+      hour = "0"+hour%12
+    }
+    if (minutes<10){
+      minutes = "0"+minutes
+    }
+    if(d.getHours()<12){
+        document.getElementById('time').innerHTML=hour +":"+minutes+" ص بتوقيت طهران - "+ dd +" "+ monthes[12-month]+" " + year;
+    }
+    else{
+        document.getElementById('time').innerHTML=hour +":"+minutes+" م بتوقيت طهران - "+ dd+" "+ monthes[12-month]+" " + year;
 
+    }
 
 
 }

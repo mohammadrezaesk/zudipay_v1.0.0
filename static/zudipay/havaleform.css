@@ -1,0 +1,25 @@
+form .row{
+  margin: 5px 0;
+}
+form input , form select{
+  text-align: right;
+}
+form span{
+  background-color: #4675fe !important;
+  color: #fff !important;
+}
+#companyicon{
+  width:40px;
+  margin: auto;
+}
+.col-2{
+  text-align: center;
+}
+.col-10{
+  padding: 0;
+}
+@media only screen and (max-width: 450px) {
+    span , p{
+      font-size: 0.6rem !important;
+    }
+}

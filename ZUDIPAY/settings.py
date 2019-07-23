@@ -29,6 +29,7 @@ ALLOWED_HOSTS = ['185.173.104.121','localhost','zudipay.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'havale',
     'Exchange',
     'calculate',
     'zudipayadmin',
