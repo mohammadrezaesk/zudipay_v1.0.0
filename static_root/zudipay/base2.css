@@ -19,12 +19,13 @@
   width: 180px;
 }
 #time{
-  position:absolute;
-  top:0;
-  right:0;
   background:#4776fe;
   padding:5px;
-  border-bottom-left-radius:15px;
+  color: white;
+  text-align: center;
+  margin: auto;
+  border-radius: 15px;
+  padding: 10px;
 }
 footer{
   position: absolute;
@@ -60,9 +61,9 @@ footer .row .col-md-4{
 
   }
   #time{
-    font-size: 0.5rem;
-
-
+    font-size: 0.65rem;
+    max-width: none !important;
+    width:70% !important;
   }
 
 
