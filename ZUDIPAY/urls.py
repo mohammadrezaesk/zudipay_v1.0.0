@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^Exchange/',include('Exchange.urls')),
     url(r'^Calculate/',include('calculate.urls')),
     url(r'^zudipayadminstraitor/', include(('zudipayadmin.urls', 'zudipayadmin'), namespace='zudipayadmin')),
+    url(r'^havale/', include(('havale.urls', 'havale'), namespace='havale')),
     url(r'^$',home_views.home)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
