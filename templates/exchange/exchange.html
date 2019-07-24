@@ -4,8 +4,12 @@
 <link rel="stylesheet" href="{% static 'zudipay/exchange.css' %}" type="text/css">
 {% endblock %}
 {% block body %}
-    <div class="container">
+<h3 style="text-align:center;color:#fff;padding:10px;background-color:#4a6ac6;">سعر صرف التومان</h3>
 
+    <div class="container">
+        <div id="time">
+
+        </div>
         <div class="row">
           <div class="col-md-6">
             <div style="text-align:center;margin-bottom:10px;margin-top: 10px;"><i class="flag-icon flag-icon-us"></i><span> مئة دولار</span></div>
@@ -57,7 +61,7 @@
                                   {% endif %}
                                   {{card.city}}
 
-                                </div> 
+                                </div>
                                 <div class="col-5" style="float:left;">
                                     {{card.price}} تومان
                                 </div>
@@ -72,6 +76,53 @@
         for (i = 0; i < x.length; i++) {
             x[i].innerHTML = parseInt(x[i].innerHTML);
         }
+        var monthes = ["كانون الثاني","شباط","اذار","نيسان","ايار","حزيران","تموز","اب","ايلول","تشرين الاول","تشرين الثاني","كانون الاول"]
+        var d = new Date();
+        var year = d.getFullYear();
+        var month = d.getMonth();
+        var dd = d.getDate();
+        var seconds = d.getSeconds();
+        var minutes = d.getMinutes();
+        var hour = d.getHours();
+        if (hour%12<10){
+          hour = "0"+hour%12
+        }
+        if (minutes<10){
+          minutes = "0"+minutes
+        }
+        if(d.getHours()<12){
+            document.getElementById('time').innerHTML=hour +":"+minutes+" ص بتوقيت طهران - "+ dd +" "+ monthes[12-month]+" " + year;
+        }
+        else{
+            document.getElementById('time').innerHTML=hour +":"+minutes+" م بتوقيت طهران - "+ dd+" "+ monthes[12-month]+" " + year;
+
+        }
+        setInterval(changetime, 1000);
+        function changetime(){
+          var d = new Date();
+          var year = d.getFullYear();
+          var month = d.getMonth();
+          var dd = d.getDate();
+          var seconds = d.getSeconds();
+          var minutes = d.getMinutes();
+          var hour = d.getHours();
+          if (hour%12<10){
+            hour = "0"+hour%12
+          }
+          if (minutes<10){
+            minutes = "0"+minutes
+          }
+          if(d.getHours()<12){
+              document.getElementById('time').innerHTML=hour +":"+minutes+" ص بتوقيت طهران - "+ dd +" "+ monthes[12-month]+" " + year;
+          }
+          else{
+              document.getElementById('time').innerHTML=hour +":"+minutes+" م بتوقيت طهران - "+ dd+" "+ monthes[12-month]+" " + year;
+
+          }
+
+
+      }
+
     </script>
 
 {% endblock %}
