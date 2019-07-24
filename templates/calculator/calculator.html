@@ -12,7 +12,8 @@ function convert(x){
         return true;
     }
     if(from=="dinar"){
-        result.innerHTML = x[1] * input +" تومان";
+        alert(x[1])
+        result.innerHTML = (x[1] * input).toFixed(0) +" تومان";
         return true;
     }
     else{
