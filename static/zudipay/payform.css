@@ -1,0 +1,110 @@
+form .row{
+  margin: 5px 0;
+}
+form input , form select{
+  text-align: right;
+}
+form span{
+  background-color: #4675fe !important;
+  color: #fff !important;
+}
+
+.container{
+  margin-top: 50px;
+  width: 80%;
+}
+.col-4{
+  text-align: center;
+  position: relative;
+}
+.traveler{
+  background-color: #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+#companyicon{
+  width:100px;
+  border:#c2c2c2 solid 3px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.col-12{
+  padding: 0;
+  text-align: center;
+}
+#price{
+  background: none;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  padding: 5px ;
+  position: relative;
+  border-bottom: 3px solid #ddd;
+  border-radius: 5px;
+}
+#price h3{
+  text-align: center;
+  background-color:#333;
+  margin: auto;
+  padding: 5px;
+  border-radius:5px;
+  color: #fff;
+}
+#googleinputlabel5{
+  float: right;
+
+}
+#googleinput5{
+}
+.googleinputlabel{
+  position: relative;
+  top: -30px;
+  left: -10px;
+  color:#999;
+  font-size:16px;
+  z-index: 3;
+  transition: all 0.3s ease;
+
+}
+.birthdate{
+  background-color: #fff;
+  border-radius: 15px;
+  border: solid 1px #999;
+  padding: 5px;
+}
+.googleinput{
+  background: none;
+  border:none;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  position: relative;
+  border-bottom: 3px solid #999;
+  border-radius: 5px;
+  z-index: 2;
+}
+.googleinput:focus , .googleinput:valid{
+  outline: none;
+  box-shadow: none;
+  border: solid 1px #4776fe;
+
+}
+.googleinput:focus + .googleinputlabel, .googleinput:valid +.googleinputlabel{
+  top: -40px;
+  font-size: 11px;
+  color: #4776fe;
+  font-weight: bold;
+  z-index: 3;
+  background-color: #ddd;
+}
+@media only screen and (max-width: 450px) {
+    span , p{
+      font-size: 0.6rem !important;
+    }
+    #companyicon{
+      width: 60%;
+    }
+}
