@@ -135,6 +135,12 @@ STATICFILES_DIRS = [
     'static'
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+#EMAIL_HOST =
+#EMAIL_PORT =
+#EMAIL_HOST_USER =
+#EMAIL_HOST_PASSWORD =
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media_root')

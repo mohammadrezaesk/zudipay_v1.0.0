@@ -20,32 +20,32 @@
       </div>
         <div class="row">
               <div class="input-group mb-3 col-md-6" style="margin:auto;">
-                  <input type="text" class="googleinput" id="googleinput1" required/>
-                  <label for="googleinput1" id="googleinputlabel1" class="googleinputlabel"> اسم صاحب الحوالة </label>
+                  <input type="text" class="googleinput" id="googleinput1" required name="tourleader"/>
+                  <label for="googleinput1" id="googleinputlabel1" class="googleinputlabel" style="background-color:#fff !important;"> اسم صاحب الحوالة </label>
               </div>
         </div>
         <div class="row">
               <div class="input-group mb-3 col-md-6" style="margin:auto;">
-                  <input type="number" class="googleinput" id="googleinput2" required/>
-                  <label for="googleinput2" id="googleinputlabel2" class="googleinputlabel"> رقم هاتف عراقي او ايراني </label>
+                  <input type="text" class="googleinput" id="googleinput2" required name="phone"/>
+                  <label for="googleinput2" id="googleinputlabel2" class="googleinputlabel" style="background-color:#fff !important;"> رقم هاتف عراقي او ايراني </label>
               </div>
         </div>
         {% for i in count %}
-        <h3 style="text-align:right;">{{i}}</h3>
+        <h3 style="text-align:right;">مسافر شماره {{i}}</h3>
         <div class="traveler">
         <div class="row" dir="ltr" style="text-align:right;">
             <div class="col-md-6" >
-              <input type="text" class="googleinput" id="fname{{i}}" required/>
-              <label for="fname{{i}}"  class="googleinputlabel">نام</label>
+              <input type="text" class="googleinput" id="lname{{i}}" required name="lastname{{i}}" />
+              <label for="lname{{i}}"  class="googleinputlabel">نام خانوادگی</label>
             </div>
             <div class="col-md-6" >
-              <input type="text" class="googleinput" id="lname{{i}}" required/>
-              <label for="lname{{i}}"  class="googleinputlabel">نام خانوادگی</label>
+              <input type="text" class="googleinput" id="fname{{i}}" required name="firstname{{i}}"/>
+              <label for="fname{{i}}"  class="googleinputlabel">نام</label>
             </div>
         </div>
         <div class="row" dir="ltr" style="text-align:right;">
             <div class="col-md-6" style="text-align:center;padding:0 0 20px 0;">
-                  <select class="birthdate" name="day">
+                  <select class="birthdate" name="birthday{{i}}">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -78,7 +78,7 @@
                       <option value="30">30</option>
                       <option value="31">31</option>
                   </select>
-                <select  name="month" class="birthdate">
+                <select  class="birthdate" name="birthmonth{{i}}">
                     <option value="1">January</option>
                     <option value="February">February</option>
                     <option value="	March">March</option>
@@ -92,7 +92,7 @@
                     <option value="November">November</option>
                     <option value="December">December</option>
                 </select>
-                <select  name="year" class="birthdate">
+                <select  class="birthdate" name="birthyear{{i}}">
                     <option value="2019">2019</option>
                     <option value="2018">2018</option>
                     <option value="2017">2017</option>
@@ -211,20 +211,22 @@
                 </select>
             </div>
             <div class="col-md-6">
-              <input type="text" class="googleinput" id="passport{{i}}" required/>
+              <input type="text" class="googleinput" id="passport{{i}}" required name="passport{{i}}"/>
               <label for="passport{{i}}"  class="googleinputlabel">شماره پاسپورت</label>
             </div>
         </div>
         <div class="row " style="text-align:center;">
           <div class="col-md-6">
-            <input type="radio" name="gender" value="male" id="male{{i}}">
+            <input type="radio" name="gender{{i}}" value="male" id="male{{i}}">
             <label for="male{{i}}">مرد</label>
-            <input type="radio" name="gender" value="female" id="female{{i}}">
+            <input type="radio" name="gender{{i}}" value="female" id="female{{i}}">
             <label for="female{{i}}">زن</label>
           </div>
           <div class="col-md-6">
-            <input type="checkbox" name="baby" value="1" id="baby{{i}}">
-            <label for="baby{{i}}">کودک هست</label>
+            <input type="radio" name="ischild{{i}}" value="True" id="true{{i}}">
+            <label for="true{{i}}">کودک</label>
+            <input type="radio" name="ischild{{i}}" value="False" id="false{{i}}" selected>
+            <label for="false{{i}}">بزرگسال</label>
           </div>
         </div>
         </div>
@@ -242,7 +244,7 @@
         </div>
         <div class="row" >
           <div class="col-12" style="text-align:center;" >
-            <button type="button" name="button" class="btn btn-primary" style="margin:0;" data-target="#exampleModalCenter" data-toggle="modal" >سجل الطلب</button>
+            <button type="submit" name="button" class="btn btn-primary" style="margin:0;"  >سجل الطلب</button>
               <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">

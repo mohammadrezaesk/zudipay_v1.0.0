@@ -7,6 +7,7 @@ class tour(models.Model):
     destination = models.CharField(max_length=100)
     company = models.CharField(max_length=100)
     day = models.IntegerField(default=True)
+    phone = models.CharField(max_length=20,default=True)
     month = models.IntegerField(default=True)
     def __str__ (self):
         return self.tourleader
@@ -14,7 +15,7 @@ class traveler(models.Model):
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     birthday = models.IntegerField(default=True)
-    birthmonth = models.IntegerField(default=True)
+    birthmonth = models.CharField(max_length=20,default=True)
     birthyear = models.IntegerField(default=True)
     passport = models.CharField(max_length=50)
     gender = models.CharField(max_length=20)
