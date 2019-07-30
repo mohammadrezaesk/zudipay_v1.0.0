@@ -8,7 +8,7 @@ def about(request):
     args={}
     return render(request,'zudipay/about.html',args)
 def fadakpage(request):
-    tours = tour.objects.order_by('tourleader')
+    tours = tour.objects.order_by('-pk')
     travelers = traveler.objects.order_by('touri')
     j=0
     for i in tours:
