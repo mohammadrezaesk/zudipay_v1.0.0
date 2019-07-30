@@ -6,6 +6,7 @@ class tour(models.Model):
     origin = models.CharField(max_length=100)
     destination = models.CharField(max_length=100)
     company = models.CharField(max_length=100)
+    count = models.IntegerField(default=True)
     day = models.IntegerField(default=True)
     phone = models.CharField(max_length=20,default=True)
     month = models.IntegerField(default=True)

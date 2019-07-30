@@ -12,7 +12,7 @@ def payform(request,company,az,be,count,day,month):
     else:
         tourleader = request.POST['tourleader']
         phone = request.POST['phone']
-        enteredtour = tour(tourleader=tourleader, origin=az, destination=be,day=day,month=month,company=company,phone=phone)
+        enteredtour = tour(tourleader=tourleader, origin=az, destination=be,day=day,month=month,company=company,phone=phone,count=count)
         enteredtour.save()
         for i in range(count):
             newi = str(i)

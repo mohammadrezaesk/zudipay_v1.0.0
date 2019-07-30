@@ -93,7 +93,7 @@ form span{
 
 }
 .googleinput:focus + .googleinputlabel, .googleinput:valid +.googleinputlabel{
-  top: -40px;
+  top: -43px;
   font-size: 11px;
   color: #4776fe;
   font-weight: bold;

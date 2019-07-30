@@ -21,6 +21,7 @@ from django.conf import settings
 from . import views as home_views
 urlpatterns = [
     url('admin/', admin.site.urls),
+    url('fadakpage/', home_views.fadakpage),
     url(r'^Exchange/',include('Exchange.urls')),
     url(r'^Calculate/',include('calculate.urls')),
     url(r'^zudipayadminstraitor/', include(('zudipayadmin.urls', 'zudipayadmin'), namespace='zudipayadmin')),

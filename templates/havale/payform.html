@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{% static 'zudipay/payform.css' %}" type="text/css">
 {% endblock %}
 {% block body %}
-<h3 style="text-align:center;color:#fff;padding:10px;background-color:#4a6ac6;">دفع الكتروني </h3>
+<h3 style="text-align:center;color:#fff;padding:10px;background-color:#4a6ac6;">ادخال المعلومات المسافرين</h3>
 
 <div class="container">
 
@@ -15,37 +15,38 @@
       <div class="row" style="margin-bottom:30px;">
             <div class="col-md-3" style="text-align:center;margin:auto;">
                 <img src="/static/{{company}}.png" id="companyicon"/>
-                <h4>از {{from}} به {{to}} در تاریخ {{month}}/{{day}}</h4>
+                <h4>من {{from}} الي {{to}} بتاريخ {{month}}/{{day}}</h4>
             </div>
       </div>
         <div class="row">
               <div class="input-group mb-3 col-md-6" style="margin:auto;">
                   <input type="text" class="googleinput" id="googleinput1" required name="tourleader"/>
-                  <label for="googleinput1" id="googleinputlabel1" class="googleinputlabel" style="background-color:#fff !important;"> اسم صاحب الحوالة </label>
+                  <label for="googleinput1" id="googleinputlabel1" class="googleinputlabel" style="background-color:#fff !important;">الاسم الثلاثي لصاحب مكتب السفر</label>
               </div>
         </div>
         <div class="row">
               <div class="input-group mb-3 col-md-6" style="margin:auto;">
                   <input type="text" class="googleinput" id="googleinput2" required name="phone"/>
-                  <label for="googleinput2" id="googleinputlabel2" class="googleinputlabel" style="background-color:#fff !important;"> رقم هاتف عراقي او ايراني </label>
+                  <label for="googleinput2" id="googleinputlabel2" class="googleinputlabel" style="background-color:#fff !important;">رقم هاتف عراقي او ايراني فعال علي الواتساب</label>
               </div>
         </div>
         {% for i in count %}
-        <h3 style="text-align:right;">مسافر شماره {{i}}</h3>
+        <h3 style="text-align:right;"> مسافر رقم  {{forloop.counter}}</h3>
         <div class="traveler">
         <div class="row" dir="ltr" style="text-align:right;">
             <div class="col-md-6" >
               <input type="text" class="googleinput" id="lname{{i}}" required name="lastname{{i}}" />
-              <label for="lname{{i}}"  class="googleinputlabel">نام خانوادگی</label>
+              <label for="lname{{i}}"  class="googleinputlabel"> اللقب </label>
             </div>
             <div class="col-md-6" >
               <input type="text" class="googleinput" id="fname{{i}}" required name="firstname{{i}}"/>
-              <label for="fname{{i}}"  class="googleinputlabel">نام</label>
+              <label for="fname{{i}}"  class="googleinputlabel">الاسم</label>
             </div>
         </div>
         <div class="row" dir="ltr" style="text-align:right;">
+
             <div class="col-md-6" style="text-align:center;padding:0 0 20px 0;">
-                  <select class="birthdate" name="birthday{{i}}">
+                  <select class="birthdate" name="birthday{{i}}" required>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -78,7 +79,7 @@
                       <option value="30">30</option>
                       <option value="31">31</option>
                   </select>
-                <select  class="birthdate" name="birthmonth{{i}}">
+                <select  class="birthdate" name="birthmonth{{i}}" required>
                     <option value="1">January</option>
                     <option value="February">February</option>
                     <option value="	March">March</option>
@@ -92,7 +93,7 @@
                     <option value="November">November</option>
                     <option value="December">December</option>
                 </select>
-                <select  class="birthdate" name="birthyear{{i}}">
+                <select  class="birthdate" name="birthyear{{i}}" required>
                     <option value="2019">2019</option>
                     <option value="2018">2018</option>
                     <option value="2017">2017</option>
@@ -212,21 +213,21 @@
             </div>
             <div class="col-md-6">
               <input type="text" class="googleinput" id="passport{{i}}" required name="passport{{i}}"/>
-              <label for="passport{{i}}"  class="googleinputlabel">شماره پاسپورت</label>
+              <label for="passport{{i}}"  class="googleinputlabel">رقم الجواز</label>
             </div>
         </div>
         <div class="row " style="text-align:center;">
           <div class="col-md-6">
-            <input type="radio" name="gender{{i}}" value="male" id="male{{i}}">
-            <label for="male{{i}}">مرد</label>
-            <input type="radio" name="gender{{i}}" value="female" id="female{{i}}">
-            <label for="female{{i}}">زن</label>
+            <input type="radio" name="gender{{i}}" value="male" id="male{{i}}" required>
+            <label for="male{{i}}">ذكر</label>
+            <input type="radio" name="gender{{i}}" value="female" id="female{{i}}" required>
+            <label for="female{{i}}">انثي</label>
           </div>
           <div class="col-md-6">
-            <input type="radio" name="ischild{{i}}" value="True" id="true{{i}}">
-            <label for="true{{i}}">کودک</label>
-            <input type="radio" name="ischild{{i}}" value="False" id="false{{i}}" selected>
-            <label for="false{{i}}">بزرگسال</label>
+            <input type="radio" name="ischild{{i}}" value="True" id="true{{i}}" required>
+            <label for="true{{i}}">طفل(من عمر 2 الي 12 عاماس)</label>
+            <input type="radio" name="ischild{{i}}" value="False" id="false{{i}}" required checked>
+            <label for="false{{i}}">بالغ</label>
           </div>
         </div>
         </div>
@@ -239,7 +240,7 @@
         </div>-->
         <div class="row" >
           <div class="col-12" style="text-align:center;" >
-              <h5>يجب ان يكون الرقم واتساب عراقي فعال او ايراني فعال</h5>
+              <h5 dir="rtl">يجب ان يكون الرقم واتساب عراقي فعال او ايراني فعال   -   الرضيع (دون عامين) لا يحتاج الي تذكرة المسبقة</h5>
           </div>
         </div>
         <div class="row" >
