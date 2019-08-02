@@ -15,3 +15,7 @@ def fadakpage(request):
         j+=1
     args={'tours':tours,'travelers':travelers,'range':range(j)}
     return render(request,'zudipay/fadakpage.html',args)
+
+def makelink(request):
+    args = {}
+    return render(request,'zudipay/makelink.html',args)

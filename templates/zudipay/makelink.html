@@ -1,0 +1,57 @@
+{% extends "base2.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'zudipay/makelink.css' %}" type="text/css">
+{% endblock %}
+{% block body %}
+<h3 style="text-align:center;color:#fff;padding:10px;background-color:#4a6ac6;">ارسال الطلبية</h3>
+<div class="container" style="text-align:center;">
+    <form class="form-group"  method="post">
+      {% csrf_token %}
+        <div class="row">
+            <div class="col-md-4">
+              <label for="companyinput">اسم الجهة المستلمة</label>
+              <select class="form-control" id="companyinput"  required>
+                <option disabled selected></option>
+                <option value="alibaba">علي بابا</option>
+                <option value="zoodroom">زود روم</option>
+                <option value="fendegh24">فندق 24</option>
+                <option value="iranmarhaba">ايران مرحبا</option>
+                <option value="fadak">قطارات فدك</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label for="origininput">نقطة البداية</label>
+              <input type="text" id="origininput" class="form-control" >
+            </div>
+            <div class="col-md-4">
+              <label for="destinationinput">نقطة النهاية</label>
+              <input type="text" id="destinationinput" class="form-control" >
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+              <label for="countinput">عدد المسافرين</label>
+              <input type="number" id="countinput" class="form-control" >
+          </div>
+          <div class="col-md-4">
+              <label for="dayinput">اليوم</label>
+              <input type="number" id="dayinput" class="form-control" >
+          </div>
+          <div class="col-md-4">
+              <label for="monthinput">الشهر</label>
+              <input type="number" id="monthinput" class="form-control" >
+          </div>
+        </div>
+
+        <button type="button" name="button" class="btn btn-primary" onclick="makelink()">تسجيل</button>
+    </form>
+</div>
+<script type="text/javascript">
+var link = "http://zudipay.com/pay/";
+function makelink(){
+    link += document.getElementById('companyinput').value + "/" + document.getElementById('origininput').value + "/" + document.getElementById('destinationinput').value + "/" + document.getElementById('countinput').value + "/" + document.getElementById('dayinput').value + "/" + document.getElementById('monthinput').value
+    window.location.replace(link);
+  }
+</script>
+{% endblock %}
